@@ -16,7 +16,7 @@ public class NoteDAO {
                      "n.annee_academique, n.moyenne, n.credit, n.session, " +
                      "m.code AS code_matiere, m.nom AS nom_matiere " +
                      "FROM notes n " +
-                     "JOIN matieres m ON n.matiere_id = m.id " + 
+                     "JOIN matieres m ON n.matiere_id = m.id " +
                      "WHERE n.etudiant_id = ?";
 
         try (Connection conn = DatabaseConnection.getConnection();
@@ -31,7 +31,7 @@ public class NoteDAO {
                     rs.getInt("etudiant_id"),
                     rs.getInt("programme_id"),
                     rs.getInt("specialite_id"),
-                    rs.getInt("matiere_id"), 
+                    rs.getInt("matiere_id"),
                     rs.getString("annee_academique"),
                     rs.getDouble("moyenne"),
                     rs.getInt("credit"),
